@@ -1,6 +1,11 @@
-# cl-pathname-pure
+# Pathname Pure
 
-Pure Common Lisp cross-platform path handling library with zero external dependencies.
+Utility library providing specialized functionality for Common Lisp applications.
+
+## Features
+
+- Core functionality implementation
+- Pure Common Lisp (zero external dependencies)
 
 ## Installation
 
@@ -11,41 +16,24 @@ Pure Common Lisp cross-platform path handling library with zero external depende
 ## Usage
 
 ```lisp
-(use-package :cl-pathname-pure)
+;; Example usage
+(main-function)
+```
 
-;; Merge pathnames with better edge-case handling
-(merge-pathnames* "file.txt" "/home/user/")
+## Testing
 
-;; Get parent directory
-(pathname-parent "/home/user/docs/")
-;; => #P"/home/user/"
-
-;; Ensure directory pathname
-(ensure-directory-pathname "/home/user/docs")
-;; => #P"/home/user/docs/"
-
-;; Check if path is directory
-(pathname-directory-p "/home/user/")  ; => T
-
-;; Native namestring conversion
-(native-namestring #P"/home/user/file.txt")
-;; => "/home/user/file.txt" (Unix) or "C:\\Users\\file.txt" (Windows)
-
-;; Parse native namestring
-(parse-native-namestring "/home/user/file.txt")
+```lisp
+(asdf:test-system :cl-pathname-pure)
 ```
 
 ## API
 
-- `merge-pathnames*` - Enhanced pathname merging
-- `pathname-directory-p` - Check if pathname is a directory
-- `pathname-name*` - Get name component (handles edge cases)
-- `pathname-type*` - Get type component (handles edge cases)
-- `pathname-parent` - Get parent directory
-- `ensure-directory-pathname` - Ensure path ends with /
-- `native-namestring` - Convert to platform-native string
-- `parse-native-namestring` - Parse platform-native string
+- `main-function - Primary function for core functionality`
 
 ## License
 
-BSD-3-Clause. Copyright (c) 2024-2026 Parkian Company LLC.
+BSD-3-Clause License - See LICENSE file for details.
+
+---
+Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause
